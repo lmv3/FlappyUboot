@@ -10,13 +10,13 @@ public class Plant : MonoBehaviour
     // x = Geschwindigkeit
     public Vector2 velocity = new Vector2(-4, 0);
     //Timer fuer SelfDestroy
-    public float lifeTime = 4;
+    public float lifeTime = 5;
   
     void Start()
     {
         
         GetComponent<Rigidbody2D>().velocity = velocity;
-        // Plants nach 4 Sekunden löschen, wenn außerhalb der Kamera
+        // Plants nach 5 Sekunden löschen, wenn außerhalb der Kamera
         Destroy(this.gameObject, lifeTime);
     }
 }
