@@ -12,7 +12,14 @@ public class Player : MonoBehaviour
 	// This can be changed in the Inspector window
 	public Vector2 jumpForce = new Vector2(0, 300);
     private int count;
-    //public Text countText;
+    public Text score;
+
+
+		void Start(){
+			count = 0;
+			SetScoreText();
+		}
+
 
     // Update is called once per frame
     void Update ()
@@ -45,8 +52,15 @@ public class Player : MonoBehaviour
         count = count + 1;
 
         //Update the currently displayed count by calling the SetCountText function.
-        //SetCountText();
+        SetScoreText();
     }
+
+    //Method to display the actual score
+		void SetScoreText(){
+			score.text = "Score: " + count.ToString();
+		}
+
+
 
 
     //Die by collosion
