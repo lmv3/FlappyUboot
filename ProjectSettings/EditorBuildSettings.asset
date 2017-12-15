@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: af098f3163fda3042927f298f97b03e7
   - enabled: 1
     path: Assets/Scenes/FlappyUboot.unity
     guid: 9d6f3fd6b9f4aaa4fab1f8c7c1195239
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 45ad5bc94f140ed44bfd7e149f4479a0

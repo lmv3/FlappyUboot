@@ -11,12 +11,11 @@ public class Player : MonoBehaviour
 	// The force which is added when the player jumps
 	// This can be changed in the Inspector window
 	public Vector2 jumpForce = new Vector2(0, 300);
-    private int count;
+	public static int count = 0;
     public Text score;
 
 
 		void Start(){
-			count = 0;
 			SetScoreText();
 		}
 
@@ -72,6 +71,6 @@ public class Player : MonoBehaviour
 	}
 	void Die()
 	{
-        SceneManager.LoadScene("FlappyUboot");
+        SceneManager.LoadScene("GameOver");
 	}
 }
