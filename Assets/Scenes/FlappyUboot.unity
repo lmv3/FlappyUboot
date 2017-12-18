@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae609dfd65e40b94195bad5c162f6939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  end_score: {fileID: 285110288}
 --- !u!4 &92301758
 Transform:
   m_ObjectHideFlags: 0
@@ -316,6 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plant: {fileID: 1398917304318538, guid: 0c115248c74eae4429e8fce1216fa316, type: 2}
   plantTop: {fileID: 1453533870921236, guid: a29f0197fabd9ec488d45f7b645d9b02, type: 2}
+  minDist: 8
 --- !u!4 &732143929
 Transform:
   m_ObjectHideFlags: 0

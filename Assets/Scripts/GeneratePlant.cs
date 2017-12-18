@@ -7,6 +7,8 @@ public class GeneratePlant : MonoBehaviour
 {
     public GameObject plant;
     public GameObject plantTop;
+    // Mindestabstand
+    public float minDist = 8; 
 
     void Start()
     {
@@ -21,10 +23,10 @@ public class GeneratePlant : MonoBehaviour
         float Ytop = Random.Range(2.05f, 7f);
         float dist = Ytop - Ybottom;
         // wenn Abstand zu klein > Anpassen
-        if (dist < 7)
+        if (dist < minDist)
         {
-            Ybottom = Ybottom - ((7 - dist)/2);
-            Ytop = Ytop + ((7 - dist)/2);
+            Ybottom = Ybottom - ((minDist - dist)/2);
+            Ytop = Ytop + ((minDist - dist)/2);
         }
         // instentiate untere Plant
         Instantiate(plant, new Vector3(10,Ybottom,0), Quaternion.identity);
