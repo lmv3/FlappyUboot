@@ -4,14 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GeneratePlant : MonoBehaviour
-{
+{   
+    //Liste für Prefabs für Oben und Unten
+    List<GameObject> topList = new List<GameObject>();
+    List<GameObject> bottomList = new List<GameObject>();
+
     public GameObject plant;
     public GameObject plantTop;
+    public GameObject RedPlant;
+    public GameObject RedPlantTop;
+    public GameObject VioletPlant;
+    public GameObject VioletPLantTop;
+
+
     // Mindestabstand
     public float minDist = 8; 
 
     void Start()
     {
+        //Listen füllen
+        topList.Add(plantTop);
+        topList.Add(RedPlantTop);
+        topList.Add(VioletPLantTop);
+        bottomList.Add(plant);
+        bottomList.Add(RedPlant);
+        bottomList.Add(VioletPlant);
+
+
         // Startzeit: 1s , Wiederholung: alle 3s
         InvokeRepeating("CreateObstacle", 1f, 3f);
         
@@ -29,9 +48,11 @@ public class GeneratePlant : MonoBehaviour
             Ytop = Ytop + ((minDist - dist)/2);
         }
         // instentiate untere Plant
-        Instantiate(plant, new Vector3(10,Ybottom,0), Quaternion.identity);
+        int bottomIndex = UnityEngine.Random.Range(0, 3);
+        Instantiate(bottomList[bottomIndex], new Vector3(10,Ybottom,0), Quaternion.identity);
         // instentiate obere Plant
-        Instantiate(plantTop, new Vector3(10, Ytop, 0), Quaternion.Euler(180f,0f,0f));
+        int topIndex = UnityEngine.Random.Range(0, 3);
+        Instantiate(topList[topIndex], new Vector3(10, Ytop, 0), Quaternion.Euler(180f,0f,0f));
 
     }
 }

@@ -315,7 +315,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plant: {fileID: 1398917304318538, guid: 0c115248c74eae4429e8fce1216fa316, type: 2}
   plantTop: {fileID: 1453533870921236, guid: a29f0197fabd9ec488d45f7b645d9b02, type: 2}
-  minDist: 8
+  RedPlant: {fileID: 1055488469948912, guid: f0f91a52501672b4caa9bf8ebc414d0c, type: 2}
+  RedPlantTop: {fileID: 1790754391142354, guid: 1470ebfd9b21db842ac6fa34130daadf,
+    type: 2}
+  VioletPlant: {fileID: 1448296178856428, guid: 885eb9d622684ad4eb861b6670baf5c2,
+    type: 2}
+  VioletPLantTop: {fileID: 1011257937089654, guid: 6d4a0885e75634442b51330cba3e8c67,
+    type: 2}
+  minDist: 7
 --- !u!4 &732143929
 Transform:
   m_ObjectHideFlags: 0
@@ -345,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!60 &880215225
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -871,7 +878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!60 &1639490247
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -984,7 +991,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: cc9f04383eafeb14ba89704f1cfa09d1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.82745105, g: 0.82745105, b: 0.82745105, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
