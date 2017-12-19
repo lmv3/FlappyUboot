@@ -16,7 +16,17 @@ public class Player : MonoBehaviour
 
 
 		void Start(){
-			SetScoreText();
+
+			//Getting the name of the active scene to store its name in a variable. By this it's possible to set the score on the load of the MainMenu to 0
+			Scene currentScene = SceneManager.GetActiveScene();
+			string sceneName = currentScene.name;
+			if (sceneName == "MainMenu"){
+				count = 0; 
+			}
+			else {
+				SetScoreText();
+			}
+			//SetScoreText();
 		}
 
 
