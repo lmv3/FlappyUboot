@@ -10,7 +10,7 @@ public class Coin : MonoBehaviour
     //Timer fuer SelfDestroy
     public float lifeTime = 4;
 
-
+    
     
     void Start()
     {
