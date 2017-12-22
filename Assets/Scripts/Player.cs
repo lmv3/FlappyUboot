@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 {
 	// The force which is added when the player jumps
 	// This can be changed in the Inspector window
-	public Vector2 jumpForce = new Vector2(0, 300);
+	public Vector2 jumpForce = new Vector2(0, 200);
 	public static int count = 0;
     public Text score;
 
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update ()
+    void FixedUpdate ()
 	{
 		// Jump
 		if (Input.GetKeyDown(KeyCode.Z))
@@ -56,6 +56,8 @@ public class Player : MonoBehaviour
 
             //... then set the other object we just collided with to inactive.
             Destroy(other.gameObject);
+			//play the Coin-Sound
+			FindObjectOfType<AudioManager>().Play("Coin");
 
         //Add one to the current value of our count variable.
         count = count + 1;
