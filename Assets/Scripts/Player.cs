@@ -35,6 +35,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate ()
 	{
+		//Update the currently displayed count by calling the SetCountText function.
+		SetScoreText();
+
 		// Jump
 		if (Input.GetKeyDown(KeyCode.Z))
 		{
@@ -63,9 +66,6 @@ public class Player : MonoBehaviour
 
         //Add one to the current value of our count variable.
         count = count + 1;
-
-        //Update the currently displayed count by calling the SetCountText function.
-        SetScoreText();
     }
 
     //Method to display the actual score
