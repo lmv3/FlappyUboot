@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
 
     //Method to display the actual score
 		void SetScoreText(){
-			score.text = "Score: " + count.ToString();
+			score.text = count.ToString();
 		}
 
 

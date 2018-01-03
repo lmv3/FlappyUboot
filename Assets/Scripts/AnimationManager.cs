@@ -23,7 +23,6 @@ public class AnimationManager : MonoBehaviour {
 		//setting copyCount to the value of the count variable which is used in the player script to track the score of the player
 		int copyCount = Player.count;
 
-		//timeStamp = Time.time + 6.0f;
 
 		//Let the player shrink when the button is pressed and the player has a score which is higher or equal 5. Afterwards, decreasing the score of the player by 5
 		if(Input.GetKeyDown("1") && copyCount >= 5 ){
