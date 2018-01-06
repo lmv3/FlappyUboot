@@ -14,6 +14,12 @@ public class Player : MonoBehaviour
 	public static int count = 0;
     public Text score;
 
+	//upper border of the screen
+	private Vector3 upperBorderDeathSpot = new Vector3(-1.53f,4.4f,-1f);
+
+	//bottom border of the screen
+	private Vector3 bottomBorderDeathSpot = new Vector3(-1.53f,-4.4f,-1f);
+
 
 		void Start(){
 
@@ -50,6 +56,13 @@ public class Player : MonoBehaviour
 			GetComponent<Rigidbody2D>().AddForce(-jumpForce);
 		}
 
+		//Dying by touching the border of the screen
+		 if(Vector3.Distance(transform.position, upperBorderDeathSpot) < 0.65f | Vector3.Distance(transform.position, bottomBorderDeathSpot) < 0.65f )
+		{
+			FindObjectOfType<AudioManager>().Play("Death");
+ 			Die();
+		}
+
 	}
 
 
@@ -72,8 +85,6 @@ public class Player : MonoBehaviour
 		void SetScoreText(){
 			score.text = count.ToString();
 		}
-
-
 
 
     //Die by collosion
