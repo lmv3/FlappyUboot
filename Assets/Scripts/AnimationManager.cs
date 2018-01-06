@@ -6,17 +6,22 @@ public class AnimationManager : MonoBehaviour {
 
 	public Animator anim;
 
+	//these variable are public so that they can be accessed by the animation
 	public bool shield_anim;
 	public bool shrink_anim;
-	//variable to keep track of when the ability was started the last time
+	//variables to keep track of when the ability was started the last time
 	private float shrinkStart = 0f;
+	private float shieldStart = 0f;
 
-	//the cooldown for the ability
+	//the cooldown for the abilities
 	private float shrinkCooldown = 6f;
+	private float shieldCooldown = 6f;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
+
+		//both are set to false in the beginning so that you can start an ability for the first time
 		shield_anim = false;
 		shrink_anim = false;
 	}
@@ -29,7 +34,8 @@ public class AnimationManager : MonoBehaviour {
 
 
 		//Let the player shrink when the button is pressed and the player has a score which is higher or equal 5. Afterwards, decreasing the score of the player by 5
-		if(Input.GetKeyDown("1") && copyCount >= 5 && shield_anim == false ){
+		//the last part checks if the other shield is currently used
+		if(Input.GetKeyDown("1") && Input.GetKeyDown("q") && copyCount >= 5 && shield_anim == false ){
 			//checking if the cooldown is already over
 			if(Time.time >  shrinkStart + shrinkCooldown){
 				anim.Play("Shrink");
@@ -40,12 +46,14 @@ public class AnimationManager : MonoBehaviour {
 		}	
 
 				//Let the player spawn a shield when the button is pressed and the player has a score which is higher or equal 5. Afterwards, decreasing the score of the player by 5
+				//the last part checks if the other shrink is currently used
 		if(Input.GetKeyDown("2") && copyCount >= 5 && shrink_anim == false ){
 			//checking if the cooldown is already over
-			//if(Time.time >  shrinkStart + shrinkCooldown){
+			if(Time.time >  shieldStart + shieldCooldown){
 				anim.Play("Shield");
 				Player.count = Player.count - 5;
-				//shrinkStart = Time.time;
+				shieldStart = Time.time;
 			}
 		}	
+	}
 }
