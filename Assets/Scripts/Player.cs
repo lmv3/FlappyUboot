@@ -8,6 +8,19 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+
+/*Input on a Kuti takes the 3 Buttons of the Console...on a normal Pc these Buttons would be used: 
+ A = P1.left
+ W = P1.middle
+ D = P1.right
+
+ H = P2.left
+ U = P2.middle
+ K = P2.right
+ */
+
+
+	
 	// The force which is added when the player jumps
 	// This can be changed in the Inspector window
 	public Vector2 jumpForce = new Vector2(0, 200);
@@ -44,13 +57,16 @@ public class Player : MonoBehaviour
 		//Update the currently displayed count by calling the SetCountText function.
 		SetScoreText();
 
-		// Jump
-		if (Input.GetKeyDown(KeyCode.Z))
+		
+
+		//Move upwards
+		if (KutiInput.GetKutiButtonDown(EKutiButton.P1_MID))
 		{
 			GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			GetComponent<Rigidbody2D>().AddForce(jumpForce);
 		}
-		if (Input.GetKeyDown(KeyCode.M))
+		//Move down(upwards for Player 2 on a KUTI)
+		if (KutiInput.GetKutiButtonDown(EKutiButton.P2_MID))
 		{
 			GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			GetComponent<Rigidbody2D>().AddForce(-jumpForce);

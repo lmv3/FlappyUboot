@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class AnimationManager : MonoBehaviour {
 
+/*Input on a Kuti takes the 3 Buttons of the Console...on a normal Pc these Buttons would be used: 
+ A = P1.left
+ W = P1.middle
+ D = P1.right
+
+ H = P2.left
+ U = P2.middle
+ K = P2.right
+ */
+
 	public Animator anim;
 
 	//these variable are public so that they can be accessed by the animation
@@ -33,9 +43,9 @@ public class AnimationManager : MonoBehaviour {
 		
 
 
-		//Let the player shrink when the button is pressed and the player has a score which is higher or equal 5. Afterwards, decreasing the score of the player by 5
+		//Let the player shrink when the buttons are pressed and the player has a score which is higher or equal 5. Afterwards, decreasing the score of the player by 5
 		//the last part checks if the other shield is currently used
-		if(Input.GetKeyDown("1") && Input.GetKeyDown("q") && copyCount >= 5 && shield_anim == false ){
+		if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT) && KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT) && copyCount >= 5 && shield_anim == false ){
 			//checking if the cooldown is already over
 			if(Time.time >  shrinkStart + shrinkCooldown){
 				anim.Play("Shrink");
@@ -45,9 +55,9 @@ public class AnimationManager : MonoBehaviour {
 
 		}	
 
-				//Let the player spawn a shield when the button is pressed and the player has a score which is higher or equal 5. Afterwards, decreasing the score of the player by 5
+				//Let the player spawn a shield when the buttons are pressed and the player has a score which is higher or equal 5. Afterwards, decreasing the score of the player by 5
 				//the last part checks if the other shrink is currently used
-		if(Input.GetKeyDown("2") && copyCount >= 5 && shrink_anim == false ){
+		if(KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT) && KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT) && copyCount >= 5 && shrink_anim == false ){
 			//checking if the cooldown is already over
 			if(Time.time >  shieldStart + shieldCooldown){
 				anim.Play("Shield");
