@@ -1512,7 +1512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 1638688348270154, guid: 007fb781b1bd81648ac203c4d124fee7, type: 2}
   start: 2.5
-  repeat: 5
+  repeat: 3
 --- !u!4 &1547285534
 Transform:
   m_ObjectHideFlags: 0
