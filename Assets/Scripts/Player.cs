@@ -25,7 +25,12 @@ public class Player : MonoBehaviour
 	// This can be changed in the Inspector window
 	public Vector2 jumpForce = new Vector2(0, 200);
 	public static int count = 0;
+
+	//Player1_Score GUI_Text
     public Text score;
+
+	//Player2_Score GUI_Text
+	public Text score2;
 
 	//upper border of the screen
 	private Vector3 upperBorderDeathSpot = new Vector3(-1.53f,4.4f,-1f);
@@ -100,6 +105,7 @@ public class Player : MonoBehaviour
     //Method to display the actual score
 		void SetScoreText(){
 			score.text = count.ToString();
+			score2.text = count.ToString();
 		}
 
 
