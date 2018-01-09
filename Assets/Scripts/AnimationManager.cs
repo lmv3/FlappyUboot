@@ -45,7 +45,7 @@ public class AnimationManager : MonoBehaviour {
 
 		//Let the player shrink when the buttons are pressed and the player has a score which is higher or equal 5. Afterwards, decreasing the score of the player by 5
 		//the last part checks if the other shield is currently used
-		if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT) && KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT) && copyCount >= 5 && shield_anim == false ){
+		if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT) && KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT) && copyCount >= 5 && shield_anim == false ){
 			//checking if the cooldown is already over
 			if(Time.time >  shrinkStart + shrinkCooldown){
 				anim.Play("Shrink");
@@ -57,7 +57,7 @@ public class AnimationManager : MonoBehaviour {
 
 				//Let the player spawn a shield when the buttons are pressed and the player has a score which is higher or equal 5. Afterwards, decreasing the score of the player by 5
 				//the last part checks if the other shrink is currently used
-		if(KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT) && KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT) && copyCount >= 5 && shrink_anim == false ){
+		if(KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT) && KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT) && copyCount >= 5 && shrink_anim == false ){
 			//checking if the cooldown is already over
 			if(Time.time >  shieldStart + shieldCooldown){
 				anim.Play("Shield");
